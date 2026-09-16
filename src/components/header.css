@@ -1,0 +1,601 @@
+
+    .event-highlight a {
+        background: linear-gradient(120deg, #224fff, #ec513f, #205ab5);
+        background-size: 200% 200%;
+        animation: borderMove 3s linear infinite;
+        padding: 10px 15px;
+        border-radius: 6px;
+        transition: opacity .25s;
+    }
+
+    .event-highlight a:hover {
+        text-decoration: none !important;
+        opacity: .7;
+    }
+
+    @keyframes borderMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 200% 50%;
+        }
+    }
+
+    .header .menu-options li.event-highlight a,
+    .header.sticky .menu-options li.event-highlight a {
+        color: var(--bs-white) !important;
+    }
+
+    .menu-options li {
+        margin-left: 42px;
+    }
+
+    #search-page-mob {
+        background: none;
+        border: 0;
+        padding: 0;
+        gap: 6px;
+    }
+
+    #search-page-mob:hover {
+        opacity: .5;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 12px;
+    }
+    header.sticky .menu-options li.ws-highlight a {
+        color: var(--bs-white) !important;
+    }
+
+    
+/*** 2026 styles start ***/ 
+#navbarToggleExternalContent {
+	margin: 5px auto auto;
+}    
+.navbar-brand {
+	top: 50px;
+}    
+.headerTopBar {
+	margin: 0 12px;
+}    
+.headerTopSlider .carousel-item, .header__top-right li a {
+	color: #b3b3b3;
+} 
+.headerTopSlider .carousel-control-next-icon, .headerTopSlider .carousel-control-prev-icon {
+	width: 15px;
+	height: 15px;
+}    
+.xs-btn {
+	background: transparent;
+	color: var(--flash-red) !important;
+    position: relative;
+    margin-left: 40px;
+    padding-left: 38px;
+    padding-right: 38px;
+} 
+.xs-btn::after {  
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: var(--flash-red);
+}   
+.header.sticky .xs-btn {
+	background: var(--bs-white);
+}    
+.headerTopSocial {
+	width: auto;
+}    
+.desksearch .head-search {
+	background: #ffffff1f;
+	width: 128px;
+	border-radius: 12px;
+}    
+.desksearch #search-page-mob {
+	flex-direction: row-reverse;
+	gap: 0;
+	width: 100%;
+	justify-content: space-between;
+	padding: 2px 10px;
+    color: #b3b3b3!important;
+}  
+.desksearch #search-page-mob span {
+	font-size: 12px;
+}
+.header.sticky .desksearch .head-search {
+	background: #7070701f;
+}    
+.header.sticky .desksearch #search-page-mob img {
+	filter: brightness(0);
+}  
+.menu-options, .header.sticky .menu-options {
+    top: 10px;
+}
+.menu-options {
+    right: 600px;
+}    
+.menu-options li a {
+	font-size: 10px;
+    letter-spacing: .5px;
+}  
+.upper-header {
+	padding-left: 278px;
+    padding-bottom: 15px;
+    margin-top: 30px;
+    justify-content: space-between;
+}    
+.lower-header {
+    background: #ffffff1f;
+    width: auto;
+}  
+.header .nav-item {
+	margin: 0 32px;
+}    
+.header .nav-item > a {
+	font-size: 15px;
+	letter-spacing: unset;
+    padding: 13px 0;
+}    
+.nav-item.dd-menu-lg::after, .header .nav-item.dd-menu-lg > a::after {
+	display: none;
+}  
+.hideOnMobile {
+	gap: 24px;
+    align-items: center;
+}    
+.header_btn {
+	padding: 0 !important;
+	padding-right: 0 !important;
+    background: transparent;
+}  
+.header_btn:hover {
+    opacity: .5;
+} 
+.header_btn span {
+	font-size: 20px;
+}    
+.header_btn span small {
+	font-size: 11px;
+    line-height: 18px;
+	color: #b3b3b3;
+}  
+.header.sticky .header_btn span, .header.sticky .header_btn span small {
+    color: var(--bs-black);
+}    
+.apnowbtn {
+	width: 157px;
+	border-radius: 27px !important;
+	display: flex;
+	padding: 18px 0;
+	align-items: center;
+	justify-content: center;
+}
+.apnowbtn img {
+	top: 0;
+	left: 4px;
+}  
+.navbar-toggler {
+    border: 0;
+}
+.navbar-toggler:focus {
+	box-shadow: none;
+}   
+.header.sticky .navbar-toggler-icon {
+	filter: invert();
+}  
+.navbar-toggler-icon {
+    width: 1.3em;
+} 
+@media (max-width: 1899px){
+    .upper-header {
+        padding-left: 242px;
+    }
+    .header .nav-item {
+        margin: 0 26px;
+    }    
+}
+@media (min-width: 1600px) and (max-width: 1799px){
+    .headerTopSlider {
+        width: 58%;
+    }  
+    .header .nav-item {
+        margin: 0 18px;
+    }  
+    .header .nav-item > a {
+        font-size: 14px;
+    }  
+    .hideOnMobile {
+        gap: 15px;
+    }    
+    .header_btn span {
+        font-size: 18px;
+    } 
+    .header_btn span small {
+        font-size: 10px;
+        line-height: 16px;
+    }    
+    .apnowbtn {
+        width: 150px;
+        padding: 16px 0;
+    }    
+}
+@media (min-width: 1400px) and (max-width: 1599px){
+    .headerTopSlider {
+        width: 62%;
+    }       
+    .upper-header {
+        padding-left: 270px;
+    }    
+    .lower-header {
+        width: 71%;
+    }  
+    .header .nav-item {
+        margin: 0 20px;
+    }    
+}    
+@media (min-width: 1300px) and (max-width: 1399px) {   
+    .upper-header {
+        padding-left: 260px;
+    }    
+    .lower-header {
+        width: 72%;
+    }    
+}    
+@media (min-width: 1200px) and (max-width: 1250px) { 
+    .header .nav-item {
+        margin: 0 20px;
+    }    
+}   
+@media (max-width: 1199px) { 
+    .navbar-brand .cu-logo {
+        width: 200px;
+    }
+    .headerTopSocial {
+        width: 100%;
+    }
+    .showOnMobile {
+        align-items: center;
+    }
+    .showOnMobile .tabletsearch {
+        display: none!important;
+    }   
+    .showOnMobile .navbar-toggler {
+        position: relative;
+        margin-left: 30px;
+        display: block!important;
+    }  
+    .showOnMobile .navbar-toggler-icon {
+        width: 1.7em;
+    }   
+    .showOnMobile .navbar-toggler-icon:hover {
+        opacity: .5;
+    }    
+    .header.sticky .header_btn img {
+        filter: invert();
+    }  
+    .upper-header {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .menu-options {
+        position: relative;
+        right: unset;        
+    }  
+    .lower-header {
+        width: 100%;
+    } 
+    .header .nav-item.dd-menu-lg > a::after {
+        display: block;
+    }    
+}  
+@media (max-width: 670px) {   
+    .desksearch {
+        display: none!important;
+    }  
+    .showOnMobile .tabletsearch {
+        display: inline-flex!important;
+        margin-left: 12px!important;
+    }    
+}    
+@media (max-width: 575px) { 
+    .header__top-right.social-sub {
+        margin-left: 32px !important;
+    }    
+    .navbar-brand .cu-logo {
+        width: 157px;
+    } 
+    .showOnMobile .tabletsearch {
+        margin-left: 20px!important;
+    }    
+    .tabletsearch .head-search {
+        position: relative;
+        right: unset;
+    } 
+    .showOnMobile .navbar-toggler {
+        margin-left: 24px;
+    }
+    .header.sticky .navbar-toggler {
+        filter: invert();
+    }  
+    .upper-header {
+        margin-top: 15px;
+    } 
+    .header .nav-item {
+        margin: 0;
+    }    
+    .header .nav-item > a {
+        font-size: 13px;
+    } 
+    .menu-options li {
+        margin-left: 0;
+    }    
+}    
+/*** 2026 styles end ***/
+    
+    @media (max-width: 1799px) {
+        .menu-options li {
+            margin-left: 18px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .program-drop-down-graphic h3 {
+            font-size: 16px;
+        }
+
+        .program-drop-down-graphic h3 span {
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 1600px) {
+        .st-programs {
+            width: 1530px;
+            height: 532px;
+            left: -190px;
+        }
+
+        .program-drop-down-graphic h3 {
+            font-size: 18px;
+        }
+
+        .program-drop-down-graphic h3 span {
+            font-size: 26px;
+        }
+    }
+
+    @media (min-width: 1800px) {
+        .st-programs {
+            left: -139px;
+        }
+    }
+
+    @media (min-width: 1400px) and (max-width: 1599px) {
+
+        
+            body {
+                
+            }
+
+            .container {
+                max-width: 1650px;
+            }
+
+            [data-aos^="fade"][data-aos^="fade"] {
+                opacity: 1;
+                transform: unset;
+            }
+
+        
+.st-programs {
+	height: 566px;
+}
+        .event-highlight a {
+            padding: 5px;
+        }
+
+        .menu-options li {
+            margin-left: 11px;
+        }
+
+        .menu-options li a {
+            font-size: 11px;
+        }
+    }
+
+    /*******************************************************/
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        body {
+            
+        }
+
+        [data-aos^="fade"][data-aos^="fade"] {
+            opacity: 1;
+            transform: unset;
+        }
+
+        .preloader {
+            height: 100%;
+        }
+
+        .modal-backdrop {
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu-options li {
+            margin-left: 42px;
+        }
+    }
+
+    @media (min-width: 1366px) and (max-width: 1399px) {
+        .container {
+            max-width: 1550px;
+        }
+    }
+
+    @media (min-width: 1251px) and (max-width: 1365px) {
+        .container {
+            max-width: 1450px;
+        }
+    }
+
+    @media (min-width: 1200px) and (max-width: 1250px) {
+        .container {
+            max-width: 1300px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .col-xl-2 {
+            flex: 0 0 auto;
+            width: 16.66666667%;
+        }
+
+        .col-xl-5 {
+            flex: 0 0 auto;
+            width: 41.66666667%;
+        }
+
+        .col-xl-10 {
+            flex: 0 0 auto;
+            width: 83.33333333%;
+        }
+    }
+
+    @media (max-width: 1399px) {
+        .nav-item.dd-menu-lg::after {
+            right: -60px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .menu-options li.ws-highlight a {
+            border-radius: 0;
+            text-align: center;
+            color: var(--bs-white)!important;
+        }
+        .menu-options li.event-highlight {
+            border-bottom: 0;
+            margin-left: 0;
+        }
+
+        .menu-options li.event-highlight a {
+            padding: 13px;
+            color: var(--bs-white);
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-options li.event-highlight a::after {
+            content: '\f245';
+            font-weight: 900;
+            font-family: 'Font Awesome 6 Free';
+            position: absolute;
+            right: 50px;
+        }
+    }
+
+    /*******************************************************/
+
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                            .stval {
+                                                                                fill: #FFFFFF;
+                                                                            }
+                                                                        
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+                                                                        .stval {
+                                                                            fill: #FFFFFF;
+                                                                        }
+                                                                    
+
+
+
+
+

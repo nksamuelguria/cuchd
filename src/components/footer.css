@@ -1,0 +1,12 @@
+
+.allNotification__icon i {
+    position: unset;
+    transform: unset;
+}    
+.fa-bell.bell:before {
+    content: "\f0f3";
+} 
+.fa-bell:before {
+    content: "\f00d";
+}
+.fa-snapchat { position: relative; top: 2px; }

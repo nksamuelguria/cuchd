@@ -1,37 +1,37 @@
-"use client";
-
-import React, { useEffect } from 'react';
-import HeaderSlider from "./HeaderSlider";
-import "./header.css";
-
-export default function Header() {
-  useEffect(() => {
-    const lazyBgs = document.querySelectorAll('[data-bg]');
-    lazyBgs.forEach(bg => {
-      if (bg instanceof HTMLElement && bg.dataset.bg) {
-        bg.style.backgroundImage = "url(" + bg.dataset.bg + ")";
-      }
-    });
-
-    const handleScroll = () => {
-      const header = document.querySelector('.header');
-      if (window.scrollY > 50) {
-        header?.classList.add('sticky');
-      } else {
-        header?.classList.remove('sticky');
-      }
-    };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <>
 <header className="header fixed-top">
   <div className="header__main">
     <div className="headerTopBar d-flex align-items-center justify-content-between">
-      <HeaderSlider />
+      <div className="headerTopSlider position-relative">
+        <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-inner text-center">
+            <div className="carousel-item active" data-bs-interval={3000}>
+              Register Now for CU Joint Campus Placement Programme <a href="https://www.cuchd.in/placements/frmRegistration.aspx?Type=jpp2019" target="_blank" className="xs-btn text-white btn-hoverEffect">Register Now</a>
+            </div>
+            <div className="carousel-item" data-bs-interval={3000}>Learn Beyond Classrooms, Get Certified, and
+              Discover Your Path Early <a href="https://www.cuchd.in/acp/" target="_blank" className="xs-btn text-white">Register Now</a>
+            </div>
+            <div className="carousel-item" data-bs-interval={3000}>International Moot Court Competition on Artificial Intelligence &amp; Intellectual Property Rights <a href="https://www.cuchd.in/conference/imccai-26/" target="_blank" className="xs-btn text-white">Register Now</a>
+            </div>
+            {/* <div class="carousel-item " data-bs-interval="3000">FRESHMEN ORIENTATION 2026 &nbsp;<small>(23rd - 29th
+                                              July 2026)</small><a href="https://www.cuchd.in/orientation-schedule-2026/"
+                          target="_blank" class="xs-btn text-white">Register
+                          Now</a>
+                  </div> */}
+            <div className="carousel-item" data-bs-interval={3000}>IC-AMDFA-2026 (Advanced Materials &amp; Devices for Futuristic
+              Applications- 2026 )<a href="https://www.cuchd.in/conference/icamdfa-26/" target="_blank" className="xs-btn text-white">Register
+                Now</a>
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
       <div className="headerTopSocial d-flex align-items-center">
         <ul className="header__top-right w-auto d-flex list-unstyled p-0 m-0">
           <li><a href="https://www.cuchd.in/whatsapp.php" target="_blank" aria-label="Call on CU's Whatsapp"><i className="fa-brands fa-whatsapp" /><span>Whatsapp</span></a></li>
@@ -54,7 +54,7 @@ export default function Header() {
         <ul className="header__top-right w-auto d-flex list-unstyled p-0 m-0 align-items-center desksearch">
           <li className="head-search m-0">
             <button id="search-page-mob" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Search Chandigarh University Website" className="text-white m-0">
-              <img src="/header-footer/search-icon-small.png" alt="Search icon" />
+              <img src="header-footer/search-icon-small.png" alt="Search icon" />
               <span>Search</span>
             </button>
           </li>
@@ -64,16 +64,16 @@ export default function Header() {
     <div className="navbar-brand p-0 mt-0">
       <div className="d-flex align-items-center">
         <a href="https://www.cuchd.in/" aria-label="Go to Chandigarh University's Home Page" className="white-logo">
-          <img src="/header-footer/cu-logo-white.webp" alt="" width={221} className="me-2 cu-logo" />
+          <img src="header-footer/cu-logo-white.webp" alt width={221} className="me-2 cu-logo" />
         </a>
         <a href="https://www.cuchd.in/" aria-label="Go to Chandigarh University's Home Page" className="dark-logo">
-          <img src="/header-footer/cu-logo-dark-new.webp" alt="" width={221} className="me-2 cu-logo" />
+          <img src="header-footer/cu-logo-dark-new.webp" alt width={221} className="me-2 cu-logo" />
         </a>
       </div>
       <div className="d-flex ms-auto showOnMobile">
         <div className="d-flex header_btn blue-gradient me-3">
           <a href="tel:+1800121288800" className="d-flex align-items-center text-white" aria-label="Call CU's Admission Helpline">
-            <img src="/header-footer/phone-icon.webp" alt="" width={30} />
+            <img src="header-footer/phone-icon.webp" alt width={30} />
             <span className="d-block ms-2">
               <small className="d-block text-capitalize">Admission Helpline</small>1800121288800
             </span>
@@ -92,7 +92,7 @@ export default function Header() {
     <nav className="navbar navbar-expand-xl" data-lenis-prevent-wheel>
       <div className="mobileNavHeader d-none">
         <a href="https://www.cuchd.in/" aria-label="Go to Chandigarh University's Home Page">
-          <img src="/header-footer/cu-logo-dark-new.webp" alt="" width={180} className="me-2 cu-logo" />
+          <img src="header-footer/cu-logo-dark-new.webp" alt width={180} className="me-2 cu-logo" />
         </a>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
       </div>
@@ -110,13 +110,13 @@ export default function Header() {
                   <div className="row g-0">
                     <div className="col-6">
                       <a href="https://www.cuchd.in/">
-                        <img src="/header-footer/cuchd-icon.webp" alt="" className="w-100" width={70} />
+                        <img src="header-footer/cuchd-icon.webp" alt className="w-100" width={70} />
                         <span>Punjab <br />Campus</span>
                       </a>
                     </div>
                     <div className="col-6">
-                      <a rel="" href="https://www.culko.in/" target="_blank">
-                        <img src="/header-footer/culko-icon.webp" alt="" className="w-100" width={70} />
+                      <a rel href="https://www.culko.in/" target="_blank">
+                        <img src="header-footer/culko-icon.webp" alt className="w-100" width={70} />
                         <span>Uttar Pradesh <br />Campus</span>
                       </a>
                     </div>
@@ -198,7 +198,7 @@ export default function Header() {
                           </li>
                         </ul>
                       </div>
-                      <div className="col-md-4 about-graphic d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/lazy-about-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="/header-footer/about-dd-image.webp">
+                      <div className="col-md-4 about-graphic d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/lazy-about-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="header-footer/about-dd-image.webp">
                         <div className="drop-down-graphic position-relative h-100">
                           <h3>Chandigarh University <span>Best Educational</span> Institution</h3>
                           <div className="dd-graphic-cont position-absolute bottom-0">
@@ -438,40 +438,40 @@ export default function Header() {
                                   <li><a href="https://www.cuchd.in/liberal-arts-and-humanities/">Psychology</a>
                                   </li>
                                   <li><a href="https://www.cuchd.in/computing/mca-data-science.php">MCA
-                                      Data Science with <img src="/header-footer/intel-logo.svg" alt="MCA Data Science with Intel" style={{marginTop: '-2px'}} width="26px" className="ptrans" /></a>
+                                      Data Science with <img data-src="header-footer/intel-logo.svg" alt="MCA Data Science with Intel" style={{marginTop: '-2px'}} width="26px" className="ptrans lazy-img" /></a>
                                   </li>
-                                  <li><a href="https://www.cuchd.in/IBM/">CSE with <img src="/header-footer/IBM-logo.webp" alt="MBA with IBM" style={{marginTop: '-3px'}} width="30px" className="ptrans" /></a>
+                                  <li><a href="https://www.cuchd.in/IBM/">CSE with <img data-src="header-footer/IBM-logo.webp" alt="MBA with IBM" style={{marginTop: '-3px'}} width="30px" className="ptrans lazy-img" /></a>
                                   </li>
                                   <li><a href="https://www.cuchd.in/engineering/be-cse-artificial-intelligence.php">BE
-                                      CSE Artificial<br /> Intelligence with <img src="/header-footer/microsoft-logo.png" alt="BE CSE AI with Microsoft" style={{verticalAlign: 'baseline', marginLeft: 2}} width="60px" className="ptrans" /></a>
+                                      CSE Artificial<br /> Intelligence with <img data-src="header-footer/microsoft-logo.png" alt="BE CSE AI with Microsoft" style={{verticalAlign: 'baseline', marginLeft: 2}} width="60px" className="ptrans lazy-img" /></a>
                                   </li>
                                   <li><a href="https://www.cuchd.in/engineering/virtusa-me-cse-cloud-computing.php">ME
-                                      CSE Cloud<br /> Computing with <img src="/header-footer/virtusa-logo.webp" alt="ME CSE with Virtusa" style={{marginTop: '-4px'}} width="50px" className="ptrans" /></a>
+                                      CSE Cloud<br /> Computing with <img data-src="header-footer/virtusa-logo.webp" alt="ME CSE with Virtusa" style={{marginTop: '-4px'}} width="50px" className="ptrans lazy-img" /></a>
                                   </li>
-                                  <li><a href="https://www.cuchd.in/TCS/">CSE with <img src="/header-footer/TCS-logo.webp" alt="MBA with TCS" style={{marginTop: '-1px'}} width="130px" className="ptrans" /></a>
+                                  <li><a href="https://www.cuchd.in/TCS/">CSE with <img data-src="header-footer/TCS-logo.webp" alt="MBA with TCS" style={{marginTop: '-1px'}} width="130px" className="ptrans lazy-img" /></a>
                                   </li>
                                   <li><a href="https://www.cuchd.in/finance-and-accounting/bcom-in-applied-finance-and-analytics-acca-gt.php">B.Com
                                       in Applied Finance &amp; Accounting with Grant
-                                      Thronton <img src="/header-footer/acca-header-logo.webp" alt="BBA with ACCA" width="30px" className="lazy-img" /></a>
+                                      Thronton <img data-src="header-footer/acca-header-logo.webp" alt="BBA with ACCA" width="30px" className="lazy-img" /></a>
                                   </li>
                                   {/* <li><a
                                                                   href="https://www.cuchd.in/finance-and-accounting/bba-acca.php">BBA
                                                                   with <img
-                                                                      src="/header-footer/acca-header-logo.webp"
+                                                                      data-src="header-footer/acca-header-logo.webp"
                                                                       alt="BBA with ACCA" width="30px"
                                                                       class="lazy-img"></a>
                                                           </li>
                                                           <li><a
                                                                   href="https://www.cuchd.in/finance-and-accounting/bcom-acca.php">B.Com
                                                                   with <img
-                                                                      src="/header-footer/acca-header-logo.webp"
+                                                                      data-src="header-footer/acca-header-logo.webp"
                                                                       alt="B.Com with ACCA" width="30px"
                                                                       class="lazy-img"></a>
                                                           </li> */}
                                   {/* <li><a
                                                                   href="https://www.cuchd.in/finance-and-accounting/mcom-acca.php">M.Com
                                                                   with <img
-                                                                      src="/header-footer/acca-header-logo.webp"
+                                                                      data-src="header-footer/acca-header-logo.webp"
                                                                       alt="M.Com with ACCA" width="30px"
                                                                       class="lazy-img"></a>
                                                           </li> */}
@@ -479,7 +479,7 @@ export default function Header() {
                                       - CASSM</a>
                                   </li>
                                   <li><a href="https://www.cuchd.in/apex-management/mba-healthcare-and-life-sciences.php">MBA
-                                      Healthcare and Hospital Management <img src="/header-footer/max-logo.jpg" alt="MBA
+                                      Healthcare and Hospital Management <img data-src="header-footer/max-logo.jpg" alt="MBA
                                                                   Healthcare and Hospital Management" width="75px" className="lazy-img" /></a>
                                   </li>
                                 </ul>
@@ -489,37 +489,37 @@ export default function Header() {
                           <div className="col-md-12 col-xl-2">
                             <ul className="list-unstyled p-0 m-0">
                               <li><a href="https://www.cuchd.in/finance-and-accounting/mba-in-capital-markets-with-additional-certifications-from-nism.php">MBA
-                                  in Capital Markets with <img src="/header-footer/nism-logo.webp" alt="MBA in Capital Markets with NISM" className="ptrans" /></a>
+                                  in Capital Markets with <img data-src="header-footer/nism-logo.webp" alt="MBA in Capital Markets with NISM" width className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/mba-strategic-hr.php">MBA
-                                  Strategic HR with <img src="/header-footer/aon-logo.webp" alt="MBA with AON" width="36px" className="ptrans" /></a>
+                                  Strategic HR with <img data-src="header-footer/aon-logo.webp" alt="MBA with AON" width="36px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/mba-data-science-and-artificial-intelligence.php">MBA
-                                  Data Science &amp; AI with <img src="/header-footer/sas-logo.webp" alt="MBA with SAS" style={{marginTop: '-3px'}} width="30px" className="ptrans" /></a>
+                                  Data Science &amp; AI with <img data-src="header-footer/sas-logo.webp" alt="MBA with SAS" style={{marginTop: '-3px'}} width="30px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/IBM/MBA-business-analytics.php">MBA
-                                  Business Analytics with <img src="/header-footer/IBM-logo.webp" alt="MBA with IBM" style={{marginTop: '-3px'}} width="30px" className="ptrans" /></a>
+                                  Business Analytics with <img data-src="header-footer/IBM-logo.webp" alt="MBA with IBM" style={{marginTop: '-3px'}} width="30px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/finance-and-accounting/mba-applied-finance.php">MBA
-                                  in Applied Finance &amp; Analytics with <img src="/header-footer/pwc-logo-new.png" alt="MBA with pwc" style={{marginTop: '-8px'}} width="30px" className="ptrans" /></a>
+                                  in Applied Finance &amp; Analytics with <img data-src="header-footer/pwc-logo-new.png" alt="MBA with pwc" style={{marginTop: '-8px'}} width="30px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/bfe.php">MBA
-                                  in Banking, Financial Services &amp; Insurance <img src="/header-footer/SBI-logo.webp" alt="MBA Banking and Financial Engineering with SBI" style={{marginTop: '-3px'}} width="90px" className="ptrans" /></a>
+                                  in Banking, Financial Services &amp; Insurance <img data-src="header-footer/SBI-logo.webp" alt="MBA Banking and Financial Engineering with SBI" style={{marginTop: '-3px'}} width="90px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/mba-master-of-business-digital-marketing.php">MBA
                                   Digital
                                   Marketing{/*<img
-                                                                  src="/header-footer/adobe-logo.png"
+                                                                  data-src="header-footer/adobe-logo.png"
                                                                   alt="MBA Digital Marketing powered by Adobe" style="margin-top: -1px;"
-                                                                  width="40px" class="ptrans">*/}</a>
+                                                                  width="40px" class="ptrans lazy-img">*/}</a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/mba-fintech.php">MBA
-                                  FinTech &amp; AI <img src="/header-footer/nse-acadmey.webp" alt="MBA with Fintech" style={{marginTop: '-2px'}} width="36px" className="ptrans" /></a>
+                                  FinTech &amp; AI <img data-src="header-footer/nse-acadmey.webp" alt="MBA with Fintech" style={{marginTop: '-2px'}} width="36px" className="ptrans lazy-img" /></a>
                               </li>
                               <li><a href="https://www.cuchd.in/apex-management/MBA-logistics-and-supply-chain-management.php">MBA
                                   Logistics and Supply Chain Management
                                   with
-                                  <img src="/header-footer/cii-logo.webp" alt="MBA Logistics and Supply Chain Management with CII" style={{marginTop: 0}} width="60px" className="ptrans" /></a>
+                                  <img data-src="header-footer/cii-logo.webp" alt="MBA Logistics and Supply Chain Management with CII" style={{marginTop: 0}} width="60px" className="ptrans lazy-img" /></a>
                               </li>
                             </ul>
                           </div>
@@ -589,7 +589,7 @@ export default function Header() {
                           </div>
                         </div>
                       </div>
-                      <div className="col-xl-2 col-lg-12 pg-bg program-graphic d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/lazy-program-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="/header-footer/program-dd-image.webp">
+                      <div className="col-xl-2 col-lg-12 pg-bg program-graphic d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/lazy-program-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="header-footer/program-dd-image.webp">
                         <div className="program-drop-down-graphic position-relative h-100">
                           <h3>University with <span>Best Placements</span></h3>
                           <div className="placement--ddNumbers progNos mt-3">
@@ -671,7 +671,7 @@ export default function Header() {
                           </li>
                         </ul>
                       </div>
-                      <div className="col-lg-7 d-none d-xl-block lazy-bg" style={{background: 'url("/header-footer/lazy-about-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="/header-footer/about-dd-image.webp">
+                      <div className="col-lg-7 d-none d-xl-block lazy-bg" style={{background: 'url("header-footer/lazy-about-dd-image.webp")', margin: '-20px -20px -20px 20px', backgroundSize: 'cover'}} data-bg="header-footer/about-dd-image.webp">
                         <div className="drop-down-graphic position-relative h-100">
                           <h3>Delivering <span>Innovation Excellence</span> in education</h3>
                           <div className="dd-graphic-cont mt-4">
@@ -857,7 +857,7 @@ export default function Header() {
                       </div>
                     </div>
                     <div className="d-none d-xl-block" style={{margin: '65px -20px 0 -20px'}}>
-                      <div className="redbox-applynow position-relative seagreen-overlay-faded lazy-bg" style={{backgroundImage: 'url(header-footer/lazy-unique3-bg.webp)'}} data-bg="/header-footer/unique3-bg.webp">
+                      <div className="redbox-applynow position-relative seagreen-overlay-faded lazy-bg" style={{backgroundImage: 'url(header-footer/lazy-unique3-bg.webp)'}} data-bg="header-footer/unique3-bg.webp">
                         <div className="position-relative">
                           <h3>Unlock your Career Goals</h3>
                           <div className="row g-0">
@@ -922,7 +922,7 @@ export default function Header() {
                   <a href="https://www.cuchd.in/campus-life/" className="mob-void">campus life</a>
                   <div className="step-second-menu st-campus">
                     <div className="d-none d-xl-block" style={{margin: '-20px -20px 15px -20px'}}>
-                      <div className="redbox-applynow position-relative seagreen-overlay-faded lazy-bg" style={{backgroundImage: 'url(header-footer/lazy-campus-bg.webp)'}} data-bg="/header-footer/campus-bg.webp">
+                      <div className="redbox-applynow position-relative seagreen-overlay-faded lazy-bg" style={{backgroundImage: 'url(header-footer/lazy-campus-bg.webp)'}} data-bg="header-footer/campus-bg.webp">
                         <div className="position-relative">
                           <h3>A Home away from Home</h3>
                           <div className="row g-0">
@@ -1071,7 +1071,7 @@ export default function Header() {
                   <a href="https://www.cuchd.in/placements/" className="mob-void">placements</a>
                   <div className="step-second-menu st-placements">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-6 d-none d-xl-block lazy-bg" style={{background: 'url("/header-footer/lazy-placement-bg.webp")', margin: '-20px 20px -20px -20px', backgroundSize: 'cover'}} data-bg="/header-footer/placement-bg.webp">
+                      <div className="col-lg-6 d-none d-xl-block lazy-bg" style={{background: 'url("header-footer/lazy-placement-bg.webp")', margin: '-20px 20px -20px -20px', backgroundSize: 'cover'}} data-bg="header-footer/placement-bg.webp">
                         <div className="drop-down-graphic position-relative h-100">
                           <h3>Most sought after<span>Destination</span>of blue-chip companies</h3>
                           <div className="dd-graphic-cont position-absolute bottom-0 w-100">
@@ -1103,7 +1103,7 @@ export default function Header() {
                               <div className="col-6 p-2 py-3 d-flex">
                                 <div className="dd--title align-self-center mx-auto">
                                   <span>
-                                    <img className="w-100" src="/header-footer/mahindra-logo-dark.webp" />
+                                    <img className="w-100 lazy-img" data-src="header-footer/mahindra-logo-dark.webp" />
                                   </span>
                                   Mahindra
                                 </div>
@@ -1159,7 +1159,7 @@ export default function Header() {
                   <a href="https://www.cuchd.in/research/" className="mob-void">Research &amp; Innovation</a>
                   <div className="step-second-menu st-research">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-6 d-none d-xl-block lazy-bg" style={{background: 'url("/header-footer/lazy-research-bg.webp")', margin: '-20px 20px -20px -20px', backgroundSize: 'cover'}} data-bg="/header-footer/research-bg.webp">
+                      <div className="col-lg-6 d-none d-xl-block lazy-bg" style={{background: 'url("header-footer/lazy-research-bg.webp")', margin: '-20px 20px -20px -20px', backgroundSize: 'cover'}} data-bg="header-footer/research-bg.webp">
                         <div className="program-drop-down-graphic position-relative h-100 text-center d-flex flex-column justify-content-between">
                           <h3>Our<span> Intellectual </span>Pursuits</h3>
                           <div className="placement--ddNumbers mt-4">
@@ -1267,7 +1267,7 @@ export default function Header() {
                   </span>
                 </a>
               </div>
-              <a href="https://cucet.cuchd.in/index.aspx?utm_source=Website&utm_medium=engineering" className="btn btn-primary btn-hoverEffect apnowbtn" target="_blank">Apply Now <img alt="Button Arrow" width={13} className="ms-2" src="/header-footer/right-arrow-small.png" /></a>  
+              <a href="https://cucet.cuchd.in/index.aspx?utm_source=Website&utm_medium=engineering" className="btn btn-primary btn-hoverEffect apnowbtn" target="_blank">Apply Now <img alt="Button Arrow" width={13} className="ms-2" src="header-footer/right-arrow-small.png" /></a>  
               <button className="navbar-toggler d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" title="View Institutes">
                 <span className="navbar-toggler-icon" />
               </button>  {/* Moved out from the div above */}                          
@@ -1299,8 +1299,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/engineering/">University Institute of Engineering</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/engg-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/engg-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/engg-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/engg-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1321,9 +1321,9 @@ export default function Header() {
                   <a href="https://www.cuchd.in/management/">University Institute of Business</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/management-institute-bg.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/management-institute-bg.webp">
                       </div>
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/management-institute-bg-small.webp">
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/management-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1343,9 +1343,9 @@ export default function Header() {
                   <a href="https://www.cuchd.in/computing/">University Institute of Computing</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/computing-institute-bg.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/computing-institute-bg.webp">
                       </div>
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/computing-institute-bg-small.webp">
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/computing-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1365,8 +1365,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/pharma-sciences/">University Institute of Pharma Sciences</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/pharma-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/pharma-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/pharma-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/pharma-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1386,8 +1386,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/biotechnology/">University Institute of Biotechnology</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/bio-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/bio-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/bio-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/bio-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1407,8 +1407,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/architecture-and-design/">University Institute of Architecture</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/arch-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/arch-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/arch-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/arch-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1428,9 +1428,9 @@ export default function Header() {
                     Humanities</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/liberal-institute-bg.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/liberal-institute-bg.webp">
                       </div>
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/liberal-institute-bg-small.webp">
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/liberal-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1451,8 +1451,8 @@ export default function Header() {
                     Arts</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/uifva-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/uifva-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/uifva-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/uifva-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1473,8 +1473,8 @@ export default function Header() {
                     And Research</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/uittr-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/uittr-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/uittr-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/uittr-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1494,8 +1494,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/legal-studies/">University Institute of Legal Studies</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/legal-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/legal-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/legal-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/legal-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1516,8 +1516,8 @@ export default function Header() {
                     Studies</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/media-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/media-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/media-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/media-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1537,8 +1537,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/basic-sciences/">University Institute of Sciences</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/uis-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/uis-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/uis-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/uis-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1559,8 +1559,8 @@ export default function Header() {
                     Sciences</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/ahs-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/ahs-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/ahs-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/ahs-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1580,8 +1580,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/design/">University Institute of Design</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/design-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/design-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/design-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/design-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1603,8 +1603,8 @@ export default function Header() {
                     Hospitality Management</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/uithm-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/uithm-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/uithm-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/uithm-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1624,8 +1624,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/finance-and-accounting/">Global School of Finance and Accounting</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/gsfa-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/gsfa-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/gsfa-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/gsfa-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1644,8 +1644,8 @@ export default function Header() {
                   <a href="https://www.cuchd.in/cassm/">Centre for Advanced Studies in Social Science and Management</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/cassm-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/cassm-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/cassm-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/cassm-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1665,8 +1665,8 @@ export default function Header() {
                     Sports</a>
                   <div className="step-second-menu institute-info-sec bg-transparent p-0">
                     <div className="row g-0 h-100">
-                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-big.webp")'}} data-bg="/header-footer/pes-institute-bg.webp" />
-                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("/header-footer/institute-bg-small.webp")'}} data-bg="/header-footer/pes-institute-bg-small.webp">
+                      <div className="col-lg-12 h-55 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-big.webp")'}} data-bg="header-footer/pes-institute-bg.webp" />
+                      <div className="col-lg-6 h-45 d-none d-lg-block lazy-bg" style={{background: 'url("header-footer/institute-bg-small.webp")'}} data-bg="header-footer/pes-institute-bg-small.webp">
                       </div>
                       <div className="col-lg-6 h-45 d-none d-lg-block">
                         <div className="institute-content d-flex flex-column justify-content-between h-100 p-4 p-xxl-5">
@@ -1691,7 +1691,3 @@ export default function Header() {
   </div>
 </header>
 
-
-    </>
-  );
-}
