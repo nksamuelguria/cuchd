@@ -107,6 +107,7 @@
 
     function observeCountersInSection(sectionId) {
     const section = document.getElementById(sectionId);
+    if (!section) return;
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -152,12 +153,12 @@
     $('.mobileNavHeader .btn-close').click(function() {   
         $('.navbar-expand-xl').removeClass("mobileMenuShow");       
     });
-    $(".header .navbar-nav li").on('mouseenter', function() {
-        $('.blur-lay').addClass("active");
-    });  
-    $(".header .navbar-nav li").on('mouseleave', function() {
-        $('.blur-lay').removeClass("active");
-    });      
+    // $(".header .navbar-nav li").on('mouseenter', function() {
+    //     $('.blur-lay').addClass("active");
+    // });  
+    // $(".header .navbar-nav li").on('mouseleave', function() {
+    //     $('.blur-lay').removeClass("active");
+    // });      
     $(".header .navbar-nav li").on('click', function() {
     $(this).toggleClass("active").siblings(this).removeClass("active");
     var offset = $(this).index();
@@ -261,7 +262,13 @@ window.__sbt_widget_client = JSON.parse('{\u0022id\u0022:31,\u0022account_id\u00
 
 
     setTimeout(() => {
-      document.getElementById("sbt-widget-host").shadowRoot.getElementById('sbt-minimize-styles').textContent += '.sbt-widget-trigger-container{right:12px!important;gap:3px!important}.sbt-widget-trigger{outline:0!important}.sbt-widget-trigger-label{font-weight:700!important;padding:3px 10px!important;font-size:12px!important;font-family:var(--primary-font)!important;color:var(--bs-black)!important}.sbt-widget-close svg,.sbt-widget-minimize svg{fill:#000!important}.sbt-widget-title{font-weight:400!important}.sbt-powered-by{display:none!important}@media (max-width:575px){.sbt-widget-trigger-container{right:3px!important;bottom:34px!important}}';
+      const widgetHost = document.getElementById("sbt-widget-host");
+      if (widgetHost && widgetHost.shadowRoot) {
+        const styleEl = widgetHost.shadowRoot.getElementById('sbt-minimize-styles');
+        if (styleEl) {
+          styleEl.textContent += '.sbt-widget-trigger-container{right:12px!important;gap:3px!important}.sbt-widget-trigger{outline:0!important}.sbt-widget-trigger-label{font-weight:700!important;padding:3px 10px!important;font-size:12px!important;font-family:var(--primary-font)!important;color:var(--bs-black)!important}.sbt-widget-close svg,.sbt-widget-minimize svg{fill:#000!important}.sbt-widget-title{font-weight:400!important}.sbt-powered-by{display:none!important}@media (max-width:575px){.sbt-widget-trigger-container{right:3px!important;bottom:34px!important}}';
+        }
+      }
     }, 1200);
 
 

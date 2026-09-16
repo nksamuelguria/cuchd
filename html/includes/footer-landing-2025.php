@@ -355,6 +355,7 @@
 
     function observeCountersInSection(sectionId) {
     const section = document.getElementById(sectionId);
+    if (!section) return;
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
         if (entry.isIntersecting) {

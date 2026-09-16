@@ -4,9 +4,9 @@ export default function Footer() {
   <style dangerouslySetInnerHTML={{__html: "\n    .allNotification__icon i {\n        position: unset;\n        transform: unset;\n    }    \n    .fa-bell.bell:before {\n        content: '\\f0f3';\n    } \n    .fa-bell:before {\n        content: '\\f00d';\n    }\n    .fa-snapchat{position: relative; top:2px;}\n" }} />
   <footer className="footer pt-115 pb-115">
     <div className="footer-links">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap -mx-4 g-4">
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+      <div className="container mx-auto px-4 mx-auto px-4 mx-auto px-4">
+        <div className="flex-wrap -mx-4 g-4">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Apply Here</h5>
             <ul className="m-0 list-none">
               <li><a href="https://www.cuchd.in/admissions/">CU Admissions</a></li>
@@ -22,7 +22,7 @@ export default function Footer() {
               <li><a href="https://www.cuchd.in/chandigarh-university-create-guinness-world-record/">Guinness World Records</a></li>
             </ul>
           </div>
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Learn Here</h5>
             <ul className="m-0 list-none">
               <li><a href="https://www.cuchd.in/iqac">IQAC</a></li>
@@ -40,7 +40,7 @@ export default function Footer() {
               <li><a href="https://www.cuchd.in/cu-unnao-campus-gets-nod-from-up-government/" target="_blank">CU Unnao Campus</a></li>
             </ul>
           </div>
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Visit Here</h5>
             <ul className="m-0 list-none">
               <li><a href="https://www.cuchd.in/rti">RTI</a></li>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li><a href="https://www.cuchd.in/icc-t20-cricket-world-cup-2026/" target="_blank">T20 World Cup 2026</a></li>
             </ul>
           </div>
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Live Here</h5>
             <ul className="m-0 list-none">
               <li><a href="https://www.cuchd.in/student-services/hostel-facility.php">CU Hostels</a></li>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li><a href="https://www.cuidol.in/" target="_blank" rel="nofollow">For CU ODL Programmes</a></li>
             </ul>
           </div>
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Others</h5>
             <ul className="m-0 list-none">
               <li className="ws-highlight"><a href="https://www.cuchd.in/web-stories/">Web Stories</a></li>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li><a href="https://www.cuchd.in/new-assets/images/notification-high-court.pdf" target="_blank" style={{color: '#8d8d8d'}}>e-SCR Report</a></li>
             </ul>
           </div>
-          <div className="w-1/2 px-4 col-sm-4 col-lg-2">
+          <div className="w-1/2 px-4 col-sm-4 lg:w-1/6 px-4">
             <h5>Get in Touch</h5>
             <p>Chandigarh University<br /> NH-05 Chandigarh-Ludhiana Highway, <br />Mohali, Punjab (INDIA)</p>
             <ul className="m-0 list-none">
@@ -105,8 +105,8 @@ export default function Footer() {
       </div>
     </div>
     <div className="copyrights">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap -mx-4">
+      <div className="container mx-auto px-4 mx-auto px-4 mx-auto px-4">
+        <div className="flex-wrap -mx-4">
           <div className="w-full px-4 w-full lg:w-1/2 px-4 col-md-7 nirf-links">
             <ul className="m-0 list-none flex justify-between">
               <li><a href="https://www.cuchd.in/chandigarh-university-ranked-naac-a-plus-grade-university/">NAAC</a>
@@ -133,36 +133,36 @@ export default function Footer() {
       </div>
     </div>
     <div className="ft-about mt-5 mb-5">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap -mx-4 g-4">
+      <div className="container mx-auto px-4 mx-auto px-4 mx-auto px-4">
+        <div className="flex-wrap -mx-4 g-4">
           <div className="w-full lg:w-1/3 px-4 flex w-full md:w-full px-4">
             <div className="card br-6 bdr-1 h-full bg-transparent mr-2 w-50">
               <div className="card-body text-center items-center flex">
                 <a href="https://www.cuchd.in/radio-punjab-90/" target="_blank" className="w-full">
-                  <img src="../includes/assets/images/header-footer/radio-punjab-logo.webp" alt="Radio Punjab 90.0" title="Radio Punjab 90.0" width={110} />
+                  <img src="/images/radio-punjab-logo.webp" alt="Radio Punjab 90.0" title="Radio Punjab 90.0" width={110} />
                 </a>
               </div>
             </div>
             <div className="card br-6 bdr-1 h-full bg-transparent w-50">
               <div className="card-body text-center items-center flex">
                 <a href="https://www.cuchd.in/maps/" className="w-full">
-                  <img src="../includes/assets/images/header-footer/virtual-tour-logo-w.webp" alt="Virtual Tour 360" title="Virtual Tour 360" width={110} />
+                  <img src="/images/virtual-tour-logo-w.webp" alt="Virtual Tour 360" title="Virtual Tour 360" width={110} />
                 </a>
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/2 px-4 col-md-8">
+          <div className="w-full lg:w-1/2 px-4 md:w-2/3 px-4">
             <h5>About Us</h5>
             <p>Chandigarh University, Panjab (CU) is the <b>Best University in
                 Punjab</b> and North India that offers various Undergraduate and Post graduate Courses like B.Tech, BCA, BBA, HMCT, B.Com, LLB, B.Arch, MBA, M.Tech, B.Com, M.Com, Journalism and MCA at an affordable fees in Chandigarh, India. <a href="https://cucet.cuchd.in/index.aspx?utm_source=Website&utm_medium=cuchd" target="_blank" style={{color: 'var(--text-skyblue)', textDecoration: 'underline'}}>Apply Now</a> at India's Best Private University in Punjab, Chandigarh which provides top placements.</p>
           </div>
-          <div className="col-lg-2 col-md-4 relative">
+          <div className="lg:w-1/6 px-4 md:w-1/3 px-4 relative">
             <div className="unai-logo">
               <img className="max-w-full h-auto" src="../includes/assets/images/header-footer/unai-logo.webp" alt="UNAI" />
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap -mx-4">
+        <div className="flex-wrap -mx-4">
           <div className="w-full px-4 text-center mt-5">
             <p className="mt-1">-� All rights reserved 2026</p>
           </div>
@@ -197,7 +197,7 @@ export default function Footer() {
       <div className="modal-content bg-transparent border-0">
         <div className="modal-header pb-0 border-bottom-0 mb-3 justify-center">
           <h5 className="modal-title text-white" id="exampleModalLabel">Search the website below</h5>
-          {/*<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*/}
+          {/*<button type="button" className="relative w-4 h-4 p-2 box-content bg-transparent border-0 opacity-50 cursor-pointer" data-bs-dismiss="modal" aria-label="Close"></button>*/}
         </div>
         <div className="modal-body pt-2 text-center uniSearch">
           <form className="relative" action="https://www.cuchd.in/searchresult.php" method="get" role="search">
