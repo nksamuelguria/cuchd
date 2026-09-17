@@ -2,10 +2,63 @@
 
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
+
+const notificationsData = [
+  {
+    title: "CU Joint Campus",
+    heading: "Register Now for CU Joint Campus Placement Programme",
+    url: "https://www.cuchd.in/placements/frmregistration.aspx?Type=jpp2019",
+    btnText: "Register Now"
+  },
+  {
+    title: "Advanced Credit Program",
+    heading: "Learn Beyond Classrooms, Get Certified, and Discover Your Path Early",
+    url: "https://www.cuchd.in/acp/",
+    btnText: "Register Now"
+  },
+  {
+    title: "JURIS NEXUS - 2026",
+    heading: "International Moot Court Competition on Artificial Intelligence & Intellectual Property Rights",
+    url: "https://www.cuchd.in/conference/imccai-26/",
+    btnText: "Register Now"
+  },
+  {
+    title: "IC-AMDFA-2026",
+    heading: "Advanced Materials & Devices for Futuristic Applications- 2026",
+    url: "https://www.cuchd.in/conference/icamdfa-26/",
+    btnText: "Register Now"
+  },
+  {
+    title: "IC-SHAPED Tech 2026",
+    heading: "International Conference on Smart Health, Allied Sciences, Physical Education and Digital Education Technologies",
+    url: "https://www.cuchd.in/conference/ic-shaped-26/",
+    btnText: "Register Now"
+  },
+  {
+    title: "GESIEF 2026",
+    heading: "Global Education Summit & Fair 2026",
+    url: "https://www.cuchd.in/conference/gesief/",
+    btnText: "Register Now"
+  },
+  {
+    title: "BMPS-2026",
+    heading: "Bioinformatics and Medicinal Plant Sciences 2026",
+    url: "https://www.cuchd.in/conference/bmps-26/",
+    btnText: "Register Now"
+  },
+  {
+    title: "Build Summit 2026",
+    heading: "Celebrating Engineers' Day with Build Summit 2026 - Innovating For Bharat",
+    url: "https://www.cuchd.in/build-2026/",
+    btnText: "Join the Movement"
+  }
+];
 
 const highlightsData = [
   {
@@ -310,11 +363,53 @@ export default function TopHighlightsSection() {
                       </SwiperSlide>
                     ))}
                   </Swiper>
+
+                </div>
+              </div>
+            </div>
+
+            <div className="col-xl-10 mt-4">
+              <div className="whatsNew__notifications position-relative">
+                <div className="notifications__slider">
+                  <Swiper
+                    modules={[Autoplay, Navigation, Pagination]}
+                    spaceBetween={15}
+                    slidesPerView={1}
+                    breakpoints={{ 768: { slidesPerView: 1 } }}
+                    autoplay={{
+                      delay: 3500,
+                      disableOnInteraction: false,
+                    }}
+                    loop={true}
+                    speed={800}
+                    pagination={{ clickable: true }}
+                    className="notifications-swiper-container pb-5"
+                  >
+                    {notificationsData.map((item, idx) => (
+                      <SwiperSlide key={idx}>
+                        <div className="ns-item w-100">
+                          <div className="card h-100 overflow-hidden br-10 p-4 border rounded d-flex flex-md-row align-items-md-center justify-content-between">
+                            <div className="card-body p-0 p-sm-2 text-start">
+                              <span className="notiTitle d-block text-danger fw-bold mb-2">{item.title}</span>
+                              <span className="notiHeading fw-semibold text-dark">{item.heading}</span>
+                            </div>
+                            <div className="card-footer border-0 bg-transparent p-2 text-end mt-3 mt-md-0">
+                              <a href={item.url} className="btn btn-primary btn-hoverEffect bg-danger text-white border-0 px-3 py-2" target="_blank" rel="noreferrer">
+                                {item.btnText}
+                                <img src="/latest-assets/img/right-arrow-btn.webp" alt="Button Arrow" width="22" className="ms-2" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

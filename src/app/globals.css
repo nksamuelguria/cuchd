@@ -17,3 +17,31 @@ body {
   color: var(--foreground);
   font-family: var(--primary-font);
 }
+
+@media (min-width: 768px) {
+    .hide-accordion-arrow-on-desktop::after {
+        display: none !important;
+        background-image: none !important;
+    }
+}
+
+#accordionFlushExampleFAQ .accordion-header:hover {
+    background: linear-gradient(to right, #ffeccc, #ffdfaa, #ffeccc)
+}
+
+/* Custom Swiper Pagination Dots to match Flickity design */
+.swiper-pagination-bullet {
+    width: 7px !important;
+    height: 7px !important;
+    margin: 0 6px !important;
+    border-radius: 3.5px !important;
+    opacity: 0.25 !important;
+    background: #333 !important;
+    transition: 0.2s ease-in-out !important;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: #fa0d0d !important;
+    width: 28px !important;
+}
