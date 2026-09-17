@@ -368,8 +368,8 @@ export default function TopHighlightsSection() {
               </div>
             </div>
 
-            <div className="col-xl-10 col-lg-11 mx-auto mt-4">
-              <div className="whatsNew__notifications position-relative">
+            <div className="col-xl-10 col-lg-10 col-md-10 mx-auto mt-4">
+              <div className="whatsNew__notifications position-relative mx-auto" style={{ maxWidth: '960px' }}>
                 <div className="notifications__slider">
                   <Swiper
                     modules={[Autoplay, Navigation, Pagination]}
