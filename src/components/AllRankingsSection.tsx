@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 
 const AllRankingsSection = () => {
-    const [activeId, setActiveId] = useState(null);
+    const [activeId, setActiveId] = useState<number | null>(null);
 
-    const toggleAccordion = (id) => {
+    const toggleAccordion = (id: number) => {
         setActiveId(activeId === id ? null : id);
     };
 
@@ -329,12 +329,12 @@ const AllRankingsSection = () => {
                         </div>
                     </div>
 
-                    <div className="mainHeading text-center mt-5"  >
+                    <div className="mainHeading text-center mt-60">
                         <h2 className="px-4 px-sm-0"><span>Our</span> Accreditations</h2>
                     </div>
                     <div className="accordion-item">
                         <h2 className="accordion-header" id="faq-head-4">
-                            <button className={`accordion-button hide-accordion-arrow-on-desktop md:pointer-events-none ${activeId === 4 ? '' : 'collapsed'}`} type="button" onClick={() => { if (window.innerWidth < 768) toggleAccordion(4); }} aria-expanded={activeId === 4}>
+                            <button className={`accordion-button hide-accordion-arrow-on-desktop md-pointer-events-none ${activeId === 4 ? '' : 'collapsed'}`} type="button" onClick={() => { if (window.innerWidth < 768) toggleAccordion(4); }} aria-expanded={activeId === 4}>
                                 <div className="row w-94 align-items-center">
                                     <div className="col-5 col-sm-4 col-md-3">
                                         <img className="lazy-img" src="/latest-assets/img/abet-logo.webp"
@@ -393,6 +393,79 @@ const AllRankingsSection = () => {
         </div>
     </section>
 
+      <style jsx global>{`
+        .accordion-collapse.collapse {
+          display: block !important;
+          max-height: 0;
+          overflow: hidden;
+          visibility: hidden;
+          transition: max-height 0.4s ease-in-out, visibility 0s 0.4s;
+        }
+        .accordion-collapse.collapse.show {
+          max-height: 1500px;
+          visibility: visible;
+          transition: max-height 0.4s ease-in-out, visibility 0s 0s;
+        }
+        .uniRankingthumb {
+          font-family: var(--alt-font);
+          color: var(--bs-black);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .qs-thumb,
+        .accordion-body .uniRankingthumb {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          gap: 2px !important;
+        }
+        .uniRankingthumb__no {
+          font-size: 50px;
+          font-weight: 800;
+          line-height: 1;
+          white-space: nowrap !important;
+          flex-shrink: 0 !important;
+        }
+        .qs-thumb .uniRankingthumb__no,
+        .accordion-body .uniRankingthumb__no {
+          font-size: 38px !important;
+          margin-bottom: 2px !important;
+        }
+        .uniRankingthumb__no span {
+          font-size: 14px;
+          font-weight: 700;
+          display: block;
+        }
+        .uniRankingthumb__content {
+          font-size: 13px;
+          line-height: 16px;
+          font-weight: 300;
+        }
+        .qs-thumb .uniRankingthumb__content,
+        .accordion-body .uniRankingthumb__content {
+          padding-left: 0 !important;
+          padding-right: 15px !important;
+        }
+        .uniRankingthumb__content span {
+          font-size: 13px;
+          font-weight: 700;
+          display: block;
+          color: var(--flash-red, #fa0d0d);
+          margin-top: 3px;
+        }
+        .mt-60 {
+          margin-top: 60px !important;
+        }
+        @media (min-width: 768px) {
+          .hide-accordion-arrow-on-desktop::after {
+            display: none !important;
+          }
+          .md-pointer-events-none {
+            pointer-events: none !important;
+          }
+        }
+      `}</style>
         </>
     );
 };

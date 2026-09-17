@@ -250,7 +250,7 @@ export default function TopHighlightsSection() {
                     zIndex: 10,
                     width: '44px',
                     height: '44px',
-                    backgroundColor: '#c40c12',
+                    backgroundColor: '#fa0d0d',
                     color: '#fff',
                     border: 'none',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
@@ -274,7 +274,7 @@ export default function TopHighlightsSection() {
                     zIndex: 10,
                     width: '44px',
                     height: '44px',
-                    backgroundColor: '#c40c12',
+                    backgroundColor: '#fa0d0d',
                     color: '#fff',
                     border: 'none',
                     boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
@@ -368,14 +368,13 @@ export default function TopHighlightsSection() {
               </div>
             </div>
 
-            <div className="col-xl-10 mt-4">
+            <div className="col-xl-10 col-lg-11 mx-auto mt-4">
               <div className="whatsNew__notifications position-relative">
                 <div className="notifications__slider">
                   <Swiper
                     modules={[Autoplay, Navigation, Pagination]}
                     spaceBetween={15}
                     slidesPerView={1}
-                    breakpoints={{ 768: { slidesPerView: 1 } }}
                     autoplay={{
                       delay: 3500,
                       disableOnInteraction: false,
@@ -383,20 +382,70 @@ export default function TopHighlightsSection() {
                     loop={true}
                     speed={800}
                     pagination={{ clickable: true }}
-                    className="notifications-swiper-container pb-5"
+                    className="notifications-swiper-container pb-4"
                   >
                     {notificationsData.map((item, idx) => (
                       <SwiperSlide key={idx}>
-                        <div className="ns-item w-100">
-                          <div className="card h-100 overflow-hidden br-10 p-4 border rounded d-flex flex-md-row align-items-md-center justify-content-between">
-                            <div className="card-body p-0 p-sm-2 text-start">
-                              <span className="notiTitle d-block text-danger fw-bold mb-2">{item.title}</span>
-                              <span className="notiHeading fw-semibold text-dark">{item.heading}</span>
+                        <div className="ns-item w-100 d-flex justify-content-center">
+                          <div
+                            className="card w-100 overflow-hidden border d-flex flex-row align-items-center justify-content-between"
+                            style={{
+                              backgroundColor: '#ffffff',
+                              borderColor: '#e2e2e2',
+                              borderRadius: '12px',
+                              minHeight: '94px',
+                              padding: '24px 32px'
+                            }}
+                          >
+                            <div className="card-body p-0 me-4 text-start">
+                              <span
+                                className="notiTitle"
+                                style={{
+                                  fontSize: '13px',
+                                  color: '#fa0d0d',
+                                  fontWeight: 700,
+                                  textDecoration: 'underline',
+                                  textTransform: 'uppercase',
+                                  display: 'block',
+                                  marginBottom: '6px'
+                                }}
+                              >
+                                {item.title}
+                              </span>
+                              <span
+                                className="notiHeading"
+                                style={{
+                                  fontSize: '16px',
+                                  lineHeight: '22px',
+                                  fontWeight: 700,
+                                  color: '#2b2b2b',
+                                  display: 'block'
+                                }}
+                              >
+                                {item.heading}
+                              </span>
                             </div>
-                            <div className="card-footer border-0 bg-transparent p-2 text-end mt-3 mt-md-0">
-                              <a href={item.url} className="btn btn-primary btn-hoverEffect bg-danger text-white border-0 px-3 py-2" target="_blank" rel="noreferrer">
+                            <div className="card-footer border-0 bg-transparent p-0 flex-shrink-0">
+                              <a
+                                href={item.url}
+                                className="btn btn-primary btn-hoverEffect"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{
+                                  whiteSpace: 'nowrap',
+                                  backgroundColor: '#fa0d0d',
+                                  color: '#ffffff',
+                                  border: 'none',
+                                  padding: '12px 24px',
+                                  borderRadius: '8px',
+                                  fontWeight: 700,
+                                  fontSize: '13px',
+                                  letterSpacing: '0.5px',
+                                  textTransform: 'uppercase'
+                                }}
+                              >
                                 {item.btnText}
-                                <img src="/latest-assets/img/right-arrow-btn.webp" alt="Button Arrow" width="22" className="ms-2" />
+                                <img src="/latest-assets/img/right-arrow-btn.webp" alt="Button Arrow" width="20" className="ms-2" />
                               </a>
                             </div>
                           </div>
@@ -411,6 +460,38 @@ export default function TopHighlightsSection() {
         </div>
 
       </div>
+      <style jsx global>{`
+        .notifications-swiper-container {
+          padding-bottom: 45px !important;
+        }
+        .notifications-swiper-container .swiper-pagination {
+          bottom: 5px !important;
+        }
+        .notifications-swiper-container .swiper-slide {
+          height: auto !important;
+          display: flex !important;
+        }
+        .notifications-swiper-container .ns-item {
+          width: 100% !important;
+          display: flex !important;
+        }
+        .notifications-swiper-container .swiper-pagination-bullet {
+          background-color: #cccccc !important;
+          opacity: 0.6 !important;
+          width: 6px !important;
+          height: 6px !important;
+          margin: 0 4px !important;
+          border-radius: 50% !important;
+          transition: all 0.3s ease !important;
+        }
+        .notifications-swiper-container .swiper-pagination-bullet-active {
+          background-color: #fa0d0d !important;
+          opacity: 1 !important;
+          width: 20px !important;
+          height: 6px !important;
+          border-radius: 3px !important;
+        }
+      `}</style>
     </section>
   );
 }
